@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 import { LikedComponent } from './pages/liked/liked.component';
 import { DeletedComponent } from './pages/deleted/deleted.component';
-import { SearchComponent } from './shared/components/search/search.component';
 import { ImageWithTooltipComponent } from './shared/components/image-with-tooltip/image-with-tooltip.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FilterEmojisByStringPipe } from './shared/pipes/filter-emojis-by-string.pipe';
@@ -25,7 +24,6 @@ import { FilterEmojisByStringPipe } from './shared/pipes/filter-emojis-by-string
     MainComponent,
     LikedComponent,
     DeletedComponent,
-    SearchComponent,
     ImageWithTooltipComponent,
     HeaderComponent,
     FilterEmojisByStringPipe
