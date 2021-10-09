@@ -8,6 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from "@angular/material/button";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,7 +39,8 @@ import { FilterEmojisByStringPipe } from './shared/pipes/filter-emojis-by-string
     MatTooltipModule,
     MatSidenavModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule
 ],
   providers: [],
   bootstrap: [AppComponent]

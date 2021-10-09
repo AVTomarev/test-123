@@ -44,7 +44,9 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Действия </th>
       <td mat-cell *matCellDef="let element">
-        <button (click)="unlikeEmoji(element)">x</button>
+        <div class="actions-container">
+          <button mat-button mat-stroked-button color="error" (click)="unlikeEmoji(element)">x</button>
+        </div>
       </td>
     </ng-container>
 

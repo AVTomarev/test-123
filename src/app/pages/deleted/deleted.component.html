@@ -44,7 +44,9 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Действия </th>
       <td mat-cell *matCellDef="let element">
-        <button (click)="removeFromDeleted(element)">Восстановить</button>
+        <div class="actions-container">
+          <button mat-button mat-stroked-button color="primary" (click)="removeFromDeleted(element)">Восстановить</button>
+        </div>
       </td>
     </ng-container>
 
