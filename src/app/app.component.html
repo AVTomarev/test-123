@@ -1,0 +1,19 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav
+    [disableClose]="true"
+    [fixedInViewport]="true"
+    mode="side"
+    opened
+  >
+    <mat-nav-list>
+      <a mat-list-item routerLink="/main" routerLinkActive="selected">Все</a>
+      <a mat-list-item routerLink="/liked" routerLinkActive="selected">Любимые</a>
+      <a mat-list-item routerLink="/deleted" routerLinkActive="selected">Удаленные</a>
+     </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

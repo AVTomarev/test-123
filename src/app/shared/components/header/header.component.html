@@ -1,0 +1,13 @@
+<h2 class="title">
+  {{ titleText }}
+</h2>
+
+<mat-form-field>
+  <input
+    #input
+    matInput
+    (input)="eSearchInput.emit(input.value)"
+    placeholder="Поиск..."
+    type="text"
+  />
+</mat-form-field>

@@ -1,0 +1,54 @@
+<div class="content">
+  <app-header
+    titleText="УДАЛЕННЫЕ"
+    (eSearchInput)="handleSearchInput($event)"
+  ></app-header>
+
+  <table mat-table [dataSource]="(emojis$ | async)! | filterEmojisByString: searchString" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Имя </th>
+      <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+    </ng-container>
+
+    <!-- src Column -->
+    <ng-container matColumnDef="src">
+      <th mat-header-cell *matHeaderCellDef> Ссылка </th>
+      <td mat-cell *matCellDef="let element"> {{ element.src }} </td>
+    </ng-container>
+
+    <!-- preview Column -->
+    <ng-container matColumnDef="preview">
+      <th mat-header-cell *matHeaderCellDef> Превью </th>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        class="td-preview"
+      >
+        <app-image-with-tooltip
+          [src]="element.src"
+          [alt]="element.alt"
+          class="preview-img"
+          [ngClass]="{
+            'preview-img_liked': element.state === 'liked'
+          }"
+        ></app-image-with-tooltip>
+      </td>
+    </ng-container>
+
+    <!-- actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Действия </th>
+      <td mat-cell *matCellDef="let element">
+        <button (click)="removeFromDeleted(element)">Восстановить</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+  </table>
+</div>
